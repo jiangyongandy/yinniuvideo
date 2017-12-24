@@ -1,0 +1,124 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/navigation1"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="#0185f1"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal"
+        android:gravity="right"
+        >
+
+        <TextView
+            android:id="@+id/tv_change_line"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="切换线路"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:visibility="visible"
+            />
+
+
+        <EditText
+            android:id="@+id/editUrl1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:singleLine="true"
+            android:textSize="35px" 
+            android:hint="请输入网址..."
+            android:visibility="gone"
+            >
+        </EditText>
+
+        <Button
+            android:id="@+id/btnGo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:background="#ECF0F2"
+            android:linksClickable="false"
+            android:text="GO"
+            android:textSize="35px"
+            android:visibility="gone" />
+                  
+    </LinearLayout>
+
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/webView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </FrameLayout>
+
+       <FrameLayout
+           android:id="@+id/fl_mask"
+           android:layout_height="match_parent"
+           android:layout_width="match_parent"
+           >
+
+<!--           <TextView
+               android:layout_gravity="center"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="播放"
+               android:textColor="#ffffff"
+               android:textSize="24sp"
+               >
+           </TextView>-->
+
+           <ImageView
+               android:id="@+id/iv_ad"
+               android:layout_height="150dp"
+               android:layout_width="match_parent"
+               android:src="@mipmap/iv_ad"
+               android:scaleType="centerCrop"
+               android:layout_gravity="bottom"
+               android:visibility="gone"
+               />
+
+
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/logView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:singleLine="false">
+        </TextView>
+
+
+       <ProgressBar
+           android:id="@+id/progressBar1"
+           style="?android:attr/progressBarStyleHorizontal"
+           android:layout_width="match_parent"
+           android:layout_height="3dp"
+           android:visibility="gone"
+           />
+
+    </RelativeLayout>
+
+</LinearLayout>

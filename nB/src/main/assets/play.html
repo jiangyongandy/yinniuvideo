@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <title>播放页</title>
+    <meta name="description" content="播放容器页" />
+    <style>
+	  				
+	 .index-list-image {
+		width: 100%;
+		height: 80px;
+		left: 0px;
+		bottom: 0px;
+		position: fixed;
+		background: #000000
+
+	}
+
+	.index-list-image img {
+		height: auto;
+		width: 100%;
+		vertical-align: middle;
+	}		
+	
+    .main-page {
+            height : 100%;
+            width : 100%;
+            position : relative;
+            background : #000000;
+            border-width: 0;
+    }
+
+    body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+    }
+	
+	html {
+		width: 100%;
+		height: 100%;
+	}				
+	  
+	</style>
+  </head>
+  <body>
+	  
+	  <iframe id = "iframe" class = "main-page" src = "http://blog.csdn.net/qq_33756493/article/details/69948549">
+	  
+	  </iframe>
+
+      <div class="index-list-image" >
+          <img src = "ad.png" >
+      </div>
+
+      <script type="text/javascript">
+
+		jsHook.loadPlayPage();
+
+	</script>
+
+  </body>
+</html>

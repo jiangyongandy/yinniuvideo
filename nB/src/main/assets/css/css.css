@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin:0; padding:0; }
+body { background:#fff; color:#000; font-size:12px; font-family: Microsoft Yahei, Arial, Helvetica, sans-serif; }
+td,th,caption { font-size:12px; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+address, caption, cite, code, dfn, em, strong, th, var,i { font-style:normal; font-weight:normal;}
+a { color:#000; text-decoration:none; }
+a:hover { text-decoration:none; }
+img { border:none; max-width:100%; }
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font:14px Microsoft Yahei,Helvetica,Arial,sans-serif;outline:none; margin:0px; padding:0px; }
+table { border-collapse:collapse; }
+
+
+.fl{ float:left;}
+.fr{ float:right;}
+.container{ max-width:100%; width:640px; margin:0 auto;}
+.banner img{ height:170px; width:100%; display:block;}
+.flex-control-nav{ display:none;}
+.flex-direction-nav{ display:none;}
+.flexslider img{ display:block; height:170px; width:100%;}
+.gg{ height:50px; background:#eee; line-height:50px; padding:0 3%; font-size:14px;}
+.gg .fl{ color:#666;}
+.gg .fr a{ color:#f00;}
+.main{ padding-bottom:30px; overflow:hidden;}
+.main li{ text-align:center; width:33.1%;  float:left; padding:10px 0; background:#fff; border-right:1px solid #eee; border-bottom:1px solid #eee;}
+.main li img{ width:76px; height:76px;}
+.main li span{ display:block; margin-top:5px;}
+.main .bor{ border-right:0;}
