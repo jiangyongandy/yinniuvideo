@@ -120,24 +120,6 @@ public class PlayActivity extends BaseActivity  {
 
     }
 
-    private void changGoForwardButton(WebView view) {
-        if (view.canGoBack())
-            mBack.setAlpha(enable);
-        else
-            mBack.setAlpha(disable);
-        if (view.canGoForward())
-            mForward.setAlpha(enable);
-        else
-            mForward.setAlpha(disable);
-        if (view.getUrl() != null && view.getUrl().equalsIgnoreCase(mHomeUrl)) {
-            mHome.setAlpha(disable);
-            mHome.setEnabled(false);
-        } else {
-            mHome.setAlpha(enable);
-            mHome.setEnabled(true);
-        }
-    }
-
     private void initProgressBar() {
         mPageLoadingProgressBar = (ProgressBar) findViewById(com.example.test_webview_demo.R.id.progressBar1);// new
         mChangeLine = (TextView) findViewById(com.example.test_webview_demo.R.id.tv_change_line);// new
@@ -255,9 +237,6 @@ public class PlayActivity extends BaseActivity  {
                 VipHelperUtils.getInstance().changeTitle(webView);
                 mWebView.loadUrl(VipHelperUtils.getInstance().pingbiAD());
                 mTestHandler.sendEmptyMessageDelayed(MSG_OPEN_TEST_URL, 5000);// 5s?
-                if (Integer.parseInt(android.os.Build.VERSION.SDK) >= 16)
-                    changGoForwardButton(webView);
-				/* mWebView.showLog("test Log"); */
             }
 
             @Override

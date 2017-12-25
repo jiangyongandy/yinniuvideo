@@ -59,21 +59,22 @@ public class BrowserActivity extends BaseActivity {
     private ImageButton mHome;
     private ImageButton mMore;
     private Button mGo;
-    private EditText mUrl;
+    private TextView mPlay;
 
+    private EditText mUrl;
     //	private static final String mHomeUrl = "http://www.youku.com/v_feelist/pt_1.html";
     private final String mHomeUrl = VipHelperUtils.getInstance().getURLbyPositon();
     private static final String TAG = "SdkDemo";
     private static final int MAX_LENGTH = 14;
-    private boolean mNeedTestPage = false;
 
+    private boolean mNeedTestPage = false;
     private final int disable = 120;
+
     private final int enable = 255;
 
     private ProgressBar mPageLoadingProgressBar = null;
 
     private ValueCallback<Uri> uploadFile;
-
     private URL mIntentUrl;
     private TextView mChangeLine;
     private boolean isPcUA;
@@ -209,7 +210,7 @@ public class BrowserActivity extends BaseActivity {
             public void onPageFinished(final WebView webView, String s) {
                 Log.i("onPageFinished", s);
                 super.onPageFinished(webView, s);
-                if (VipHelperUtils.getInstance().getCurrentPosition() == 15)
+/*                if (VipHelperUtils.getInstance().getCurrentPosition() == 15)
                     return;
 //				Toast.makeText(getApplicationContext(), "页面加载完成", Toast.LENGTH_SHORT).show();
                 if (VipHelperUtils.getInstance().getCurrentPosition() == 4) {
@@ -244,8 +245,7 @@ public class BrowserActivity extends BaseActivity {
                 // mTestHandler.sendEmptyMessage(MSG_OPEN_TEST_URL);
                 mTestHandler.sendEmptyMessageDelayed(MSG_OPEN_TEST_URL, 5000);// 5s?
                 if (Integer.parseInt(android.os.Build.VERSION.SDK) >= 16)
-                    changGoForwardButton(webView);
-                /* mWebView.showLog("test Log"); */
+                    changGoForwardButton(webView);*/
             }
         });
 
@@ -420,6 +420,31 @@ public class BrowserActivity extends BaseActivity {
         mGo = (Button) findViewById(com.example.test_webview_demo.R.id.btnGo1);
         mUrl = (EditText) findViewById(com.example.test_webview_demo.R.id.editUrl1);
         mMore = (ImageButton) findViewById(com.example.test_webview_demo.R.id.btnMore);
+        mPlay = (TextView) findViewById(com.example.test_webview_demo.R.id.tv_play);
+
+        mPlay.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //腾讯UA特殊处理（移动版面，PC接口）
+                if (VipHelperUtils.getInstance().getCurrentPosition() == 1) {
+
+                    Log.i("切换UA", "腾讯UA--------------" + mWebView.getOriginalUrl());
+                    WebSettings webSetting = mWebView.getSettings();
+                    webSetting.setUserAgentString("Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36");
+                    isPcUA = true;
+                    mobileUrl = mWebView.getOriginalUrl();
+                    mWebView.loadUrl(mWebView.getOriginalUrl());
+                    return;
+                }
+
+                Intent intent = new Intent(BrowserActivity.this, PlayActivity.class);
+                intent.putExtra("URL", mWebView.getOriginalUrl());
+                VipHelperUtils.getInstance().setCurrentPlayUrl(mWebView.getOriginalUrl());
+                BrowserActivity.this.startActivity(intent);
+            }
+        });
+
+
         if (Integer.parseInt(android.os.Build.VERSION.SDK) >= 16) {
             mBack.setAlpha(disable);
             mForward.setAlpha(disable);

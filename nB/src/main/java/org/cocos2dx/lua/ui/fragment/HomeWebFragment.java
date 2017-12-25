@@ -60,7 +60,7 @@ public class HomeWebFragment extends BaseFragment {
     private ViewGroup mViewParent;
     private EditText mUrl;
 
-    private final String mAboutUrl = "http://555.cocos4dx.com/niu/";
+    private final String mAboutUrl = "https://555.cocos4dx.com/niu";
     //    private final String mHomeUrl = "http://dwjzywapp.com/appindex.php";
     private static final String TAG = "SdkDemo";
     private static final int MAX_LENGTH = 14;
@@ -324,7 +324,7 @@ public class HomeWebFragment extends BaseFragment {
         @JavascriptInterface
         public void go2Site(int position, String apiString) {
             VipHelperUtils.getInstance().setCurrentApi(apiString);
-            Log.i("jiamizifuchuan","-------------"+apiString);
+            Log.i("jiamizifuchuan","-------------"+apiString + " --------position:" + position);
             VipHelperUtils.getInstance().changeCurrentSite(position);
 
             if(CommonConstant.buildConfig.isDebug) {

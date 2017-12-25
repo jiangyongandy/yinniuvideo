@@ -6,20 +6,31 @@
     tools:context=".MainActivity">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/navigation1"
         android:layout_width="fill_parent"
         android:layout_height="48dp"
         android:background="#0185f1"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:text="影牛V视"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="播放"
             android:textColor="#ffffff"
             android:textSize="18sp" />
 
@@ -50,7 +61,7 @@
             android:textSize="35px"
             android:visibility="gone" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
