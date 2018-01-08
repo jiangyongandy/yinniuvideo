@@ -44,7 +44,7 @@ public class VipHelperUtils {
     * */
     private String[] ids = {"j-player", "vip_player", "m-video-player", "player", "td-player", "c-player-video"
             , "player", "", "", "ws_play relative", "player_section"
-            , "playerbox", "", "", ""};
+            , "playerbox", "", "", "","",""};
 
     private String[] names = {"乐视TV视频", "腾讯视频", "爱奇艺视频", "优酷视频", "土豆视频", "芒果TV视频",
             "搜狐视频", "Ac弹幕网", "哔哩哔哩", "WASU华数视频", "1905电影网视频",
